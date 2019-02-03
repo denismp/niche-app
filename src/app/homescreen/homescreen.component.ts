@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homescreen.component.css']
 })
 export class HomescreenComponent implements OnInit {
+  title = 'niche-app Home';
 
   constructor() { }
 
