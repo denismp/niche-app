@@ -1,28 +1,28 @@
 <div style="text-align: center">
-<h3>{{ title }}</h3>
+<h3 id="titleId">{{ title }}</h3>
 </div>
 <div class="ui-g">
     <div class="ui-g-12 ui-md-2">
-      <p-panel header="Menu" [showHeader]=true>
+      <p-panel header="Menu" [showHeader]=true id="menuheaderId">
         item
       </p-panel>
     </div>
     <div class="ui-g-12 ui-md-10 ui-g-nopad">
         <div class="ui-g-12">
-            <p-toolbar>
+            <p-toolbar id="toolbarId">
               <div class="ui-toolbar-group-left">
-                  <button pButton type="button" label="New" icon="pi pi-plus"></button>
-                  <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"></button>
+                  <button pButton type="button" label="New" icon="pi pi-plus" id="newBtn"></button>
+                  <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" id="uploadBtn"></button>
                       
                   <i class="pi pi-bars"></i>
                   
-                  <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning"></p-splitButton>
+                  <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning" id="saveBtn"></p-splitButton>
               </div>
               
               <div class="ui-toolbar-group-right">
-                  <button pButton type="button" icon="pi pi-search"></button>
-                  <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
-                  <button pButton type="button" icon="pi pi-times" class="ui-button-danger"></button>
+                  <button pButton type="button" icon="pi pi-search" id="searchId"></button>
+                  <button pButton type="button" icon="pi pi-calendar" class="ui-button-success" id="calendarBtn"></button>
+                  <button pButton type="button" icon="pi pi-times" class="ui-button-danger" id="exitBtn"></button>
               </div>
           </p-toolbar>
         </div>
@@ -46,6 +46,9 @@
         </div>
     </div>
     <div class="ui-g-12">
-        Footer
+      <!-- <p-panel header="Footer" [showHeader]=false style="border-top-style:solid; border-top-width: 1px; border-top-color: rgb(200,200,200)"> -->
+      <p-panel header="Footer" [showHeader]=false id="footerId"> 
+        Some text
+      </p-panel>
     </div>
 </div>
