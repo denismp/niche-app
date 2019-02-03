@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import {MenuModule} from 'primeng/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
     AppRoutingModule,
     PanelModule,
     ToolbarModule,
-    SplitButtonModule
+    SplitButtonModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
