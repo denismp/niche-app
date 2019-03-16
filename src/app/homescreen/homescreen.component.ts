@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Menu } from 'primeng/menu';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-homescreen',
@@ -16,9 +17,9 @@ export class HomescreenComponent implements OnInit {
 
   ngOnInit() {
     this.items = [{
-      label: 'Menu',
+      label: 'Menu', style: "background-color: red",
       items: [
-          {label: 'Home', routerLink: "/home"},
+          {label: 'Home', routerLink: "/home", routerLinkActiveOptions: "active"},
           {label: 'Download', icon: 'pi pi-fw pi-download'}
       ]
   }];
