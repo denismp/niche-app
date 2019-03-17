@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { HomePanelComponent } from './components/home-panel/home-panel.component';
+import { CheckPointCriteriaComponent } from './components/check-point-criteria/check-point-criteria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomescreenComponent,
-    HomePanelComponent
+    HomePanelComponent,
+    CheckPointCriteriaComponent
   ],
   imports: [
     BrowserModule,

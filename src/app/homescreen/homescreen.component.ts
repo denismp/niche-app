@@ -20,6 +20,7 @@ export class HomescreenComponent implements OnInit {
       label: 'Menu', style: "background-color: red",
       items: [
           {label: 'Home', routerLink: "/home", routerLinkActiveOptions: "active"},
+          {label: 'Checkpoint Criteria', routerLink: "/checkpoint.criteria", routerLinkActiveOptions: "active"},
           {label: 'Download', icon: 'pi pi-fw pi-download'}
       ]
   }];
