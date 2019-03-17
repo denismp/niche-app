@@ -1,52 +1,36 @@
-<div style="text-align: center">
-<h3 id="titleId">{{ title }}</h3>
-</div>
 <div class="ui-g">
     <div class="ui-g-12 ui-md-2">
-        <p-menu class="left-menu"  [model]="items" id="itemsId"></p-menu>
+        <p-menu class="left-menu" [model]="items" id="itemsId"></p-menu>
     </div>
     <div class="ui-g-12 ui-md-10 ui-g-nopad">
         <div class="ui-g-12">
             <p-toolbar id="toolbarId">
-              <div class="ui-toolbar-group-left">
-                  <button pButton type="button" label="New" icon="pi pi-plus" id="newBtn"></button>
-                  <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" id="uploadBtn"></button>
-                      
-                  <i class="pi pi-bars"></i>
-                  
-                  <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning" id="saveBtn"></p-splitButton>
-              </div>
-              
-              <div class="ui-toolbar-group-right">
-                  <button pButton type="button" icon="pi pi-search" id="searchId"></button>
-                  <button pButton type="button" icon="pi pi-calendar" class="ui-button-success" id="calendarBtn"></button>
-                  <button pButton type="button" icon="pi pi-times" class="ui-button-danger" id="exitBtn"></button>
-              </div>
-          </p-toolbar>
+                <div class="ui-toolbar-group-left">
+                    <button pButton type="button" label="New" icon="pi pi-plus" id="newBtn"></button>
+                    <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"
+                        id="uploadBtn"></button>
+
+                    <i class="pi pi-bars"></i>
+
+                    <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning"
+                        id="saveBtn"></p-splitButton>
+                </div>
+
+                <div class="ui-toolbar-group-right">
+                    <button pButton type="button" icon="pi pi-search" id="searchId"></button>
+                    <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"
+                        id="calendarBtn"></button>
+                    <button pButton type="button" icon="pi pi-times" class="ui-button-danger" id="exitBtn"></button>
+                </div>
+            </p-toolbar>
         </div>
-        <div class="ui-g-12 ui-g-nopad">
-            <div class="ui-g">
-                <div class="ui-g-12 ui-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet, orci nec dictum convallis, ligula mauris vestibulum turpis, nec varius tortor quam at diam. Nullam a viverra nibh. In tincidunt tempor lectus quis vulputate. Pellentesque nec dui aliquam, lobortis est in, lobortis ante</div>
-                <div class="ui-g-12 ui-md-4">Maecenas vel nisi aliquet, vulputate tortor id, laoreet massa. Maecenas mattis tristique bibendum. Suspendisse vel mi dictum, vestibulum lacus quis, pulvinar quam. Proin vulputate, nibh at finibus varius, leo eros lacinia elit, nec blandit odio tellus a justo. Donec nec ex auctor, tristique nulla nec, rutrum sapien.</div>
-                <div class="ui-g-12 ui-md-4">Proin efficitur in leo eget ornare. Nam vestibulum neque sed velit sagittis sodales. Sed scelerisque hendrerit magna a hendrerit. Cras tempor sem at justo pharetra convallis. Curabitur vel sodales purus. Vestibulum interdum facilisis nulla imperdiet suscipit. Quisque lectus felis, condimentum eget hendrerit sit amet.</div>
-            </div>
-            <div class="ui-g">
-                <div class="ui-g-6 ui-md-3"><img src="../../assets/images/demo/galleria/galleria1.jpg" style="width:100%"></div>  
-                <div class="ui-g-6 ui-md-3"><img src="../../assets/images/demo/galleria/galleria2.jpg" style="width:100%"></div> 
-                <div class="ui-g-6 ui-md-3"><img src="../../assets/images/demo/galleria/galleria3.jpg" style="width:100%"></div>    
-                <div class="ui-g-6 ui-md-3"><img src="../../assets/images/demo/galleria/galleria4.jpg" style="width:100%"></div>      
-            </div>
-            
-            <div class="ui-g">
-                <div class="ui-g-12 ui-md-6">Phasellus faucibus purus volutpat mauris lacinia sodales. Ut sit amet sapien facilisis, commodo dui non, fringilla tellus. Quisque tempus facilisis nisi sodales finibus. Pellentesque neque orci, ullamcorper vitae ligula quis, dignissim euismod augue.</div>
-                <div class="ui-g-12 ui-md-6">Fusce ullamcorper congue massa, eget ullamcorper nunc lobortis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices dui eget dolor feugiat dapibus. Aliquam pretium leo et egestas luctus. Nunc facilisis gravida tellus.</div>
-            </div>
-        </div>
+        <router-outlet></router-outlet>
+
     </div>
     <div class="ui-g-12">
-      <!-- <p-panel header="Footer" [showHeader]=false style="border-top-style:solid; border-top-width: 1px; border-top-color: rgb(200,200,200)"> -->
-      <p-panel header="Footer" [showHeader]=false id="footerId"> 
-        Some text
-      </p-panel>
+        <!-- <p-panel header="Footer" [showHeader]=false style="border-top-style:solid; border-top-width: 1px; border-top-color: rgb(200,200,200)"> -->
+        <p-panel header="Footer" [showHeader]=false id="footerId">
+            Some text
+        </p-panel>
     </div>
 </div>

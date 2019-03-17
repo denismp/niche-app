@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomescreenComponent } from './homescreen/homescreen.component';
+import { HomePanelComponent } from './components/home-panel/home-panel.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: HomescreenComponent },
-  { path: '*', component: HomescreenComponent },
+  { path: '', component: AppComponent },
+  { path: '*', component: AppComponent },
   // { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomescreenComponent }
+  { path: 'home', component: HomePanelComponent }
 ];
 
 @NgModule({
