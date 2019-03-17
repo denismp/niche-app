@@ -21,6 +21,7 @@ export class HomescreenComponent implements OnInit {
       items: [
           {label: 'Home', routerLink: "/home", routerLinkActiveOptions: "active"},
           {label: 'Checkpoint Criteria', routerLink: "/checkpoint.criteria", routerLinkActiveOptions: "active"},
+          {label: 'Our Company', routerLink: "/ourcompany.criteria", routerLinkActiveOptions: "active"},
           {label: 'Download', icon: 'pi pi-fw pi-download'}
       ]
   }];

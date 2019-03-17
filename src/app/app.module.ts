@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { HomePanelComponent } from './components/home-panel/home-panel.component';
 import { CheckPointCriteriaComponent } from './components/check-point-criteria/check-point-criteria.component';
+import { OurCompanyComponent } from './components/our-company/our-company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomescreenComponent,
     HomePanelComponent,
-    CheckPointCriteriaComponent
+    CheckPointCriteriaComponent,
+    OurCompanyComponent
   ],
   imports: [
     BrowserModule,
