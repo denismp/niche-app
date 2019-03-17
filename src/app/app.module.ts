@@ -13,6 +13,9 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
 import { HomePanelComponent } from './components/home-panel/home-panel.component';
 import { CheckPointCriteriaComponent } from './components/check-point-criteria/check-point-criteria.component';
 import { OurCompanyComponent } from './components/our-company/our-company.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CheckpointCriteriaService } from './services/checkpoint-criteria.service';
+import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,13 @@ import { OurCompanyComponent } from './components/our-company/our-company.compon
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     PanelModule,
     ToolbarModule,
     SplitButtonModule,
     MenuModule
   ],
-  providers: [],
+  providers: [CheckpointCriteriaService, CheckpointCriteriaStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
