@@ -1,3 +1,8 @@
 <p>
   check-point-criteria works!
 </p>
+<ul *ngFor="let checkpointCriteria of checkpointCriterias">
+    <li>ID: {{ checkpointCriteria.id }}</li>
+    <li>NAME: {{ checkpointCriteria.criteriaName }}</li>
+    <li>POINTS: {{ checkpointCriteria.points }}</li>
+  </ul>
