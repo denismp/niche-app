@@ -6,6 +6,8 @@ import { PanelModule } from 'primeng/panel';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { MenuModule } from 'primeng/menu';
+import { DataTableModule, SharedModule, ButtonModule, TabViewModule, PickListModule } from 'primeng/primeng';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +35,12 @@ import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
     PanelModule,
     ToolbarModule,
     SplitButtonModule,
-    MenuModule
+    MenuModule,
+    DataTableModule,
+    SharedModule,
+    ButtonModule,
+    TabViewModule,
+    PickListModule
   ],
   providers: [CheckpointCriteriaService, CheckpointCriteriaStore],
   bootstrap: [AppComponent]
