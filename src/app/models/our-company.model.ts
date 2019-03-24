@@ -1,10 +1,10 @@
-import { CompanyModel } from './company.model';
+import { Company } from './company.model';
 
-export interface OurCompanyModel {
+export interface OurCompany {
     id: number;
     createdBy: string;
     createdDate: Date;
     updatedBy: string;
     updatedDate: Date;
-    company: CompanyModel;
+    company: Company;
 }

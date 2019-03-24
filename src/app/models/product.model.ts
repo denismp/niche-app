@@ -1,11 +1,11 @@
-import { CompanyModel } from './company.model'
+import { Company } from './company.model'
 import { CheckPointCriteriaModule } from '../components/check-point-criteria/check-point-criteria.module';
-import { ContactInfoModel } from './contact-info.model';
-import { CompetitorsToTargetModel } from './competitors-to-target.model';
-import { ShipmentInfoModel } from './shipment-info.model';
-import { ParentAsinModel } from './parent-asin.model';
+import { ContactInfo } from './contact-info.model';
+import { CompetitorsToTarget } from './competitors-to-target.model';
+import { ShipmentInfo } from './shipment-info.model';
+import { ParentAsin } from './parent-asin.model';
 
-export interface ProductModel {
+export interface Product {
     id: number;
     asin: string;
     productPageLink: string;
@@ -28,12 +28,12 @@ export interface ProductModel {
     actualProfitMargin: number;
     estimatedROI: number;
     actualROI: number;
-    companys: CompanyModel[];
-    contactInfos: ContactInfoModel[];
+    companys: Company[];
+    contactInfos: ContactInfo[];
     criteriaYesNos: CheckPointCriteriaModule[];
-    competitorsToTarget: CompetitorsToTargetModel[];
-    shipmentInfo: ShipmentInfoModel;
-    parentAsin: ParentAsinModel;
+    competitorsToTarget: CompetitorsToTarget[];
+    shipmentInfo: ShipmentInfo;
+    parentAsin: ParentAsin;
     notes: string;
     createdBy: string;
     createdDate: Date;

@@ -1,3 +1,45 @@
-<p>
+<!-- <p>
   our-company works!
-</p>
+</p> -->
+
+<div class="row">
+    <div class="col-md-12">
+
+        <p-dataTable [value]="ourCompanys" [rows]="10" expandableRows="false" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedOurCompany">
+            <p-header>
+                <b>Our Company</b>
+            </p-header>
+            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
+            <p-column field="company.id" header="Company ID" [sortable]="true" [style]="{'width': '10%'}"></p-column>
+            <p-column field="company.email" header="Email" [sortable]="true"></p-column>
+            <p-column field="company.companyName" header="Company Name" [sortable]="true"></p-column>
+            <p-column field="company.webSite" header="Web Site" [sortable]="true"></p-column>
+            <p-column field="company.phone" header="Phone" [sortable]="true"></p-column>
+            <p-column field="company.notes" header="Notes" [sortable]="true"></p-column>
+
+             <!-- <p-column field="books" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToAuthor(row)">
+                        <span class="sr-only">View</span>
+                    </span>
+                </ng-template>
+            </p-column> -->
+
+            <!-- <ng-template let-author pTemplate="rowexpansion">
+                <div class="ui-g">
+                    <div class="uig-12 ui-md-6"><b>Record created date: </b>{{ author.createdDate | date }}</div>
+                    <div class="uig-12 ui-md-6"><b>Record created by: </b>{{ author.createdBy }}</div>
+                    <div class="uig-12 ui-md-6"><b>Record last updated: </b>{{ author.updatedDate | date }}</div>
+                    <div class="uig-12 ui-md-6"><b>Record last updated by: </b>{{ author.updatedBy }}</div>                   
+                </div>
+            </ng-template> -->
+
+        </p-dataTable>
+        <!-- <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addAuthor()">Add Author</button>
+        </div> -->
+    </div>
+</div>

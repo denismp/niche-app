@@ -1,4 +1,4 @@
-export interface CompetitorsToTargetModel {
+export interface CompetitorsToTarget {
     id: number;
     sellerName: string;
     url: string;

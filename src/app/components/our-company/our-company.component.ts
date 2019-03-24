@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { OurCompany } from 'src/app/models/our-company.model';
+import { OurCompanyStore } from 'src/app/stores/our-company-store';
 
 @Component({
   selector: 'app-our-company',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurCompanyComponent implements OnInit {
 
-  constructor() { }
+  ourCompanys: OurCompany[];
+
+  originalId: number;
+  selectedOurCompany: OurCompany = {
+    id: null,
+    company: null,
+    createdBy: '',
+    createdDate: null,
+    updatedBy: '',
+    updatedDate: null
+  };
+
+  @Input() set ourCompany(value: OurCompany) {
+    if (value) {
+      this.originalId = value.id;
+    }
+    this.selectedOurCompany = Object.assign({}, value);
+  }
+
+  constructor(private ourCompanyStore: OurCompanyStore) {
+    this.ourCompanyStore.init();
+  }
 
   ngOnInit() {
+    this.ourCompanyStore.getAll$().subscribe(ourCompanys => { this.ourCompanys = ourCompanys; })
   }
 
 }

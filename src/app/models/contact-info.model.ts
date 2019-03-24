@@ -1,11 +1,11 @@
-import { ProductModel } from './product.model';
+import { Product } from './product.model';
 
-export interface ContactInfoModel {
+export interface ContactInfo {
     id: number;
     email: string;
     contactDate: Date;
     notes: string;
-    product: ProductModel;
+    product: Product;
     createdBy: string;
     createdDate: Date;
     updatedBy: string;

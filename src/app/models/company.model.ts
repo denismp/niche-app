@@ -1,6 +1,6 @@
-import { ProductModel } from './product.model';
+import { Product } from './product.model';
 
-export interface CompanyModel {
+export interface Company {
     id: number;
     email: string;
     companyName: string;
@@ -11,5 +11,5 @@ export interface CompanyModel {
     createdDate: Date;
     updatedBy: string;
     updatedDate: Date;
-    products: ProductModel[];
+    products: Product[];
 }

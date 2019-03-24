@@ -1,9 +1,9 @@
-import { ProductModel } from './product.model';
+import { Product } from './product.model';
 
-export interface ParentAsinModel {
+export interface ParentAsin {
     id: number;
     asin: string;
-    childAsins: ProductModel[];
+    childAsins: Product[];
     createdBy: string;
     createdDate: Date;
     updatedBy: string;

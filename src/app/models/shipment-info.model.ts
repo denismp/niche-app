@@ -1,12 +1,12 @@
-import { ProductModel } from './product.model';
+import { Product } from './product.model';
 
-export interface ShipmentInfoModel {
+export interface ShipmentInfo {
     id: number;
     fnsku: string;
     sku: string;
     shipmentDate: Date;
     skuAssignedDate: Date;
-    products: ProductModel[];
+    products: Product[];
     createdBy: string;
     createdDate: Date;
     updatedBy: string;
