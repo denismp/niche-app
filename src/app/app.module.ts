@@ -18,6 +18,7 @@ import { OurCompanyComponent } from './components/our-company/our-company.compon
 import { HttpClientModule } from '@angular/common/http';
 import { CheckpointCriteriaService } from './services/checkpoint-criteria.service';
 import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
     HomescreenComponent,
     HomePanelComponent,
     CheckPointCriteriaComponent,
-    OurCompanyComponent
+    OurCompanyComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,70 @@
+<!-- <p>
+  product works!
+</p> -->
+<div class="row">
+  <div class="col-md-12">
+
+    <p-dataTable [value]="products" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true"
+      selectionMode="single" [(selection)]="selectedProduct">
+      <p-header>
+        <b>Products</b>
+      </p-header>
+      <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
+      <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
+      <p-column field="id" header="Product ID" [sortable]="true" [style]="{'width': '10%'}"></p-column>
+      <p-column field="asin" header="ASIN" [sortable]="true"></p-column>
+      <p-column field="productPageLink" header="PageLink" [sortable]="true"></p-column>
+      <p-column field="primeLowPrice" header="Prime Low Price" [sortable]="true"></p-column>
+      <p-column field="totalUnitsSoldPerMonth" header="Monthly Units Sold" [sortable]="true"></p-column>
+
+      <p-column field="company" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+        <ng-template let-row="rowData" pTemplate type="body">
+          <span class="fa fa-search fa-15" (click)="routeToCompany(row)">
+            <span class="sr-only">View Company</span>
+          </span>
+        </ng-template>
+      </p-column>
+
+    </p-dataTable>
+    <!-- <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addAuthor()">Add Author</button>
+        </div> -->
+  </div>
+</div>
+
+<!-- selectedProduct: Product = {
+  id: null,
+  asin: null,
+  productPageLink: '',
+  twentyOnePointScore: null,
+  primeLowPrice: null,
+  totalUnitsSoldPerMonth: null,
+  totalRevenuePerMonth: null,
+  numberOfCompetitiveSellers: null,
+  unitsPerMonth: null,
+  revenuePerMonth: null,
+  estimatedProductCost: null,
+  actualProductCost: null,
+  estimatedAmazonFees: null,
+  actualAmazonFees: null,
+  estimatedShippingCost: null,
+  actualShippingCost: null,
+  estimatedProcessingCost: null,
+  actualProcessingCost: null,
+  estimatedProfitMargin: null,
+  actualProfitMargin: null,
+  estimatedROI: null,
+  actualROI: null,
+  companys: null,
+  contactInfos: null,
+  criteriaYesNos: null,
+  competitorsToTarget: null,
+  shipmentInfo: null,
+  parentAsin: null,
+  notes: '',
+  createdBy: '',
+  createdDate: null,
+  updatedBy: '',
+  updatedDate: null
+}; -->

@@ -14,7 +14,7 @@ export class OurCompanyStore extends Store<OurCompany[]>{
     }
 
     init = (): void => {
-        if(this.getAll()) {return;}
+        if (this.getAll()) { return; }
 
         this.ourcompanyService.get$().pipe(tap(this.store)).subscribe();
     }

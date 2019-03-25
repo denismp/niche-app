@@ -41,7 +41,7 @@ export class OurCompanyComponent implements OnInit {
     this.selectedOurCompany = ourCompany;
     console.log('routeToOurProducts(): called...');
     var products: Product[] = ourCompany.company.products;
-    for( var i in products) {
+    for (var i in products) {
       console.log("ID=" + products[i].id)
       console.log("ASIN=" + products[i].asin)
     }

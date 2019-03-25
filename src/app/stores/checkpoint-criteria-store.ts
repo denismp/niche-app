@@ -14,7 +14,7 @@ export class CheckpointCriteriaStore extends Store<CheckPointCriteria[]>{
     }
 
     init = (): void => {
-        if(this.getAll()) {return;}
+        if (this.getAll()) { return; }
 
         this.checkpointCriteriaService.get$().pipe(tap(this.store)).subscribe();
     }
