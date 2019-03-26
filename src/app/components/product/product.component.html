@@ -17,6 +17,15 @@
       <p-column field="primeLowPrice" header="Prime Low Price" [sortable]="true"></p-column>
       <p-column field="totalUnitsSoldPerMonth" header="Monthly Units Sold" [sortable]="true"></p-column>
 
+      <ng-template let-product pTemplate="rowexpansion">
+          <div class="ui-g">
+              <div class="uig-12 ui-md-6"><b>Record created date: </b>{{ product.createdDate | date }}</div>
+              <div class="uig-12 ui-md-6"><b>Record created by: </b>{{ product.createdBy }}</div>
+              <div class="uig-12 ui-md-6"><b>Record last updated: </b>{{ product.updatedDate | date }}</div>
+              <div class="uig-12 ui-md-6"><b>Record last updated by: </b>{{ product.updatedBy }}</div>                   
+          </div>
+      </ng-template>
+
       <p-column field="company" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
         <ng-template let-row="rowData" pTemplate type="body">
           <span class="fa fa-search fa-15" (click)="routeToCompany(row)">
