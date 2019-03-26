@@ -18,27 +18,27 @@
       <p-column field="totalUnitsSoldPerMonth" header="Monthly Units Sold" [sortable]="true"></p-column>
 
       <ng-template let-product pTemplate="rowexpansion">
-          <div class="ui-g">
-              <div class="uig-12 ui-md-6"><b>Product Page Link: </b>{{ product.productPageLink }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Number Of Competitive Sellers: </b>{{ product.numberOfCompetitiveSellers }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Units Per Month: </b>{{ product.unitsPerMonth }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Estimated Product Cost: </b>{{ product.estimatedProductCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Actual Product Cost: </b>{{ product.actualProductCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Estimated Amazon Fees: </b>{{ product.estimatedAmazonFees }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Actual Amazon Fees: </b>{{ product.actualAmazonFees }}</div>
-              <div class="uig-12 ui-md-6"><b>Product EstimatedShippCost: </b>{{ product.estimatedShippingCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Actual Shipping Cost: </b>{{ product.actualShippingCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Actual Processing Cost: </b>{{ product.actualProcessingCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Estimated Processing Cost: </b>{{ product.estimatedProcessingCost }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Estimated Profit Margin: </b>{{ product.estimatedProfitMargin }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Estimated ROI: </b>{{ product.estimatedROI }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Actual ROI: </b>{{ product.actualROI }}</div>
-              <div class="uig-12 ui-md-6"><b>Product Notes: </b>{{ product.notes }}</div>
- 
-              <div class="uig-12 ui-md-6"><b>Record created date: </b>{{ product.createdDate | date }}</div>
-              <div class="uig-12 ui-md-6"><b>Record created by: </b>{{ product.createdBy }}</div>
-              <div class="uig-12 ui-md-6"><b>Record last updated: </b>{{ product.updatedDate | date }}</div>
-              <div class="uig-12 ui-md-6"><b>Record last updated by: </b>{{ product.updatedBy }}</div>                   
+          <div class="p-grid p-dir-col">
+              <div class="p-col p-col-align-start"><b>Product Page Link: </b>{{ product.productPageLink }}</div>
+              <div class="p-col p-col-align-start"><b>Product Number Of Competitive Sellers: </b>{{ product.numberOfCompetitiveSellers }}</div>
+              <div class="p-col p-col-align-start"><b>Product Units Per Month: </b>{{ product.unitsPerMonth }}</div>
+              <div class="p-col p-col-align-start"><b>Product Estimated Product Cost: </b>{{ product.estimatedProductCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Actual Product Cost: </b>{{ product.actualProductCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Estimated Amazon Fees: </b>{{ product.estimatedAmazonFees }}</div>
+              <div class="p-col p-col-align-start"><b>Product Actual Amazon Fees: </b>{{ product.actualAmazonFees }}</div>
+              <div class="p-col p-col-align-start"><b>Product EstimatedShippCost: </b>{{ product.estimatedShippingCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Actual Shipping Cost: </b>{{ product.actualShippingCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Actual Processing Cost: </b>{{ product.actualProcessingCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Estimated Processing Cost: </b>{{ product.estimatedProcessingCost }}</div>
+              <div class="p-col p-col-align-start"><b>Product Estimated Profit Margin: </b>{{ product.estimatedProfitMargin }}</div>
+              <div class="p-col p-col-align-start"><b>Product Estimated ROI: </b>{{ product.estimatedROI }}</div>
+              <div class="p-col p-col-align-start"><b>Product Actual ROI: </b>{{ product.actualROI }}</div>
+
+              <div class="p-col p-col-align-start"><b>Record created date: </b>{{ product.createdDate | date }}</div>
+              <div class="p-col p-col-align-start"><b>Record created by: </b>{{ product.createdBy }}</div>
+              <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ product.updatedDate | date }}</div>
+              <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ product.updatedBy }}</div> 
+              <div class="p-col p-col-align-start"><b>Product Notes: </b>{{ product.notes }}</div>                  
           </div>
       </ng-template>
 
