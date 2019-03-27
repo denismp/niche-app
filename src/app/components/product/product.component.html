@@ -38,7 +38,14 @@
               <div class="p-col p-col-align-start"><b>Record created by: </b>{{ product.createdBy }}</div>
               <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ product.updatedDate | date }}</div>
               <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ product.updatedBy }}</div> 
-              <div class="p-col p-col-align-start"><b>Product Notes: </b>{{ product.notes }}</div>                  
+              <div class="p-col p-col-align-start"><b>Product Notes: </b>{{ product.notes }}</div>                 
+          </div>
+          <div>
+              <button pButton type="button" icon="pi pi-search" label="Contact Info" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+              <button pButton type="button" icon="pi pi-search" label="Criteria" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+              <button pButton type="button" icon="pi pi-search" label="Competitors To Target" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+              <button pButton type="button" icon="pi pi-search" label="Shipment Info" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+              <button pButton type="button" icon="pi pi-search" label="Parent Asin" class="ui-button-raised ui-button-info"></button> 
           </div>
       </ng-template>
 
