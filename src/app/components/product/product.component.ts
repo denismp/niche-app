@@ -64,7 +64,7 @@ export class ProductComponent implements OnInit {
     this.productStore.getAll$().subscribe(products => { this.products = products; })
   }
 
-  routeToCompany(product: Product): void {
+  routeToCompanies(product: Product): void {
     this.selectedProduct = product;
     console.log('routeToCompany(): called...');
     var companies: Company[] = product.companys;

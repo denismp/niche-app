@@ -19,7 +19,7 @@
             <p-column field="company.phone" header="Phone" [sortable]="true"></p-column>
             <p-column field="company.notes" header="Notes" [sortable]="true"></p-column>
 
-             <p-column field="products" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+             <p-column field="products" header="Our Products" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
                 <ng-template let-row="rowData" pTemplate type="body">
                     <span class="fa fa-search fa-15" (click)="routeToOurProducts(row)">
                         <span class="sr-only">View Our Products</span>
