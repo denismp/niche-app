@@ -65,6 +65,7 @@ export class ProductComponent implements OnInit {
   }
 
   routeToCompanies(product: Product): void {
+    // TODO need to query for companies associted with the product.  This means the controller on the backend needs a method for this.
     this.selectedProduct = product;
     console.log('routeToCompanies(): called...');
     var companies: Company[] = product.companys;

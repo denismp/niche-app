@@ -49,7 +49,7 @@
           </div>
       </ng-template>
 
-      <p-column field="company" header="Companies" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+      <p-column field="companys" header="Companies" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
         <ng-template let-row="rowData" pTemplate type="body">
           <span class="fa fa-search fa-15" (click)="routeToCompanies(row)">
             <span class="sr-only">View Company</span>
