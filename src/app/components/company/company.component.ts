@@ -13,7 +13,7 @@ export class CompanyComponent implements OnInit {
   companys: Company[];
 
   originalId: number;
-  selectedOurCompany: Company = {
+  selectedCompany: Company = {
     id: null,
     email: '',
     companyName: '',
@@ -31,7 +31,7 @@ export class CompanyComponent implements OnInit {
     if (value) {
       this.originalId = value.id;
     }
-    this.selectedOurCompany = Object.assign({}, value);
+    this.selectedCompany = Object.assign({}, value);
   }
 
   constructor(private companyStore: CompanyStore) {
@@ -43,7 +43,7 @@ export class CompanyComponent implements OnInit {
   }
 
   routeToProducts(company: Company): void {
-    this.selectedOurCompany = company;
+    this.selectedCompany = company;
     console.log('routeToProducts(): called...');
     var products: Product[] = company.products;
     for (var i in products) {
