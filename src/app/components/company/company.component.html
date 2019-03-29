@@ -1,13 +1,13 @@
-<p>
+<!-- <p>
   company works!
-</p>
+</p> -->
 <div class="row">
     <div class="col-md-12">
 
         <p-dataTable [value]="companys" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
             [(selection)]="selectedCompany">
             <p-header>
-                <b>Our Company</b>
+                <b>Companies</b>
             </p-header>
             <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
             <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>

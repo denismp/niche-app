@@ -1,3 +1,59 @@
-<p>
+<!-- <p>
   competitors-to-target works!
-</p>
+</p> -->
+<div class="row">
+    <div class="col-md-12">
+
+        <p-dataTable [value]="competitorsToTargets" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedCompany">
+            <p-header>
+                <b>Competitors To Target</b>
+            </p-header>
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
+            <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
+            <!-- <p-column field="company.id" header="Company ID" [sortable]="true" [style]="{'width': '10%'}"></p-column> -->
+            <p-column field="sellerId" header="Seller ID" [sortable]="true"></p-column>
+            <p-column field="sellerName" header="Seller Name" [sortable]="true"></p-column>
+            <p-column field="url" header="Web Site" [sortable]="true"></p-column>
+            <p-column field="dateInventoryLastScouted" header="Last Scouted" [sortable]="true"></p-column>
+
+            <ng-template let-competitortotarget pTemplate="rowexpansion">
+                    <div class="p-grid p-dir-col">
+                        <div class="p-col p-col-align-start"><b>Notes: </b>{{ competitortotarget.notes }}</div>
+          
+                        <div class="p-col p-col-align-start"><b>Record created date: </b>{{ competitortotarget.createdDate | date }}</div>
+                        <div class="p-col p-col-align-start"><b>Record created by: </b>{{ competitortotarget.createdBy }}</div>
+                        <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ competitortotarget.updatedDate | date }}</div>
+                        <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ competitortotarget.updatedBy }}</div>                
+                    </div>
+            </ng-template>
+
+             <p-column field="products" header="Products" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToProducts(row)">
+                        <span class="sr-only">View Products</span>
+                    </span>
+                </ng-template>
+            </p-column>
+
+        </p-dataTable>
+        <!-- <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addAuthor()">Add Author</button>
+        </div> -->
+    </div>
+</div>
+
+<!-- selectedCompetitorsToTarget: CompetitorsToTarget = {
+    id: null,
+    sellerName: '',
+    url: '',
+    sellerId: '',
+    dateInventoryLastScouted: null,
+    notes: '',
+    products: null,
+    createdBy: '',
+    createdDate: null,
+    updatedBy: '',
+    updatedDate: null
+  }; -->
