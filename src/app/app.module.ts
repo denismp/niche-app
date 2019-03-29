@@ -20,6 +20,7 @@ import { CheckpointCriteriaService } from './services/checkpoint-criteria.servic
 import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
 import { ProductComponent } from './components/product/product.component';
 import { CompanyComponent } from './components/company/company.component';
+import { CompetitorsToTargetComponent } from './components/competitors-to-target/competitors-to-target.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CompanyComponent } from './components/company/company.component';
     CheckPointCriteriaComponent,
     OurCompanyComponent,
     ProductComponent,
-    CompanyComponent
+    CompanyComponent,
+    CompetitorsToTargetComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { CheckPointCriteriaComponent } from './components/check-point-criteria/c
 import { OurCompanyComponent } from './components/our-company/our-company.component';
 import { ProductComponent } from './components/product/product.component';
 import { CompanyComponent } from './components/company/company.component';
+import { CompetitorsToTargetComponent } from './components/competitors-to-target/competitors-to-target.component';
 
 const routes: Routes = [
   { path: '', component: HomePanelComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'ourcompany.component', component: OurCompanyComponent },
   { path: 'product.component', component: ProductComponent },
   { path: 'company.component', component: CompanyComponent },
+  { path: 'product.component', component: ProductComponent },
+  { path: 'competitors.to.target.component', component: CompetitorsToTargetComponent },
 ];
 
 @NgModule({
