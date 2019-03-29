@@ -9,13 +9,13 @@ import { tap } from 'rxjs/operators';
 })
 export class CompanyStore extends Store<Company[]>{
 
-    constructor(private ourcompanyService: CompanyService) {
+    constructor(private companyService: CompanyService) {
         super();
     }
 
     init = (): void => {
         if (this.getAll()) { return; }
 
-        this.ourcompanyService.get$().pipe(tap(this.store)).subscribe();
+        this.companyService.get$().pipe(tap(this.store)).subscribe();
     }
 }
