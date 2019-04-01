@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'parent.asin.component', component: ParentAsinComponent },
   { path: 'shipment.info.component', component: ShipmentInfoComponent },
   { path: 'contact.info.component', component: ContactInfoComponent },
+  { path: 'competitors.to.target.component', component: CompetitorsToTargetComponent },
   { path: 'criteria.yes.no.component', component: CriteriaYesNoComponent },
 ];
 
