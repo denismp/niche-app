@@ -21,6 +21,9 @@ import { CheckpointCriteriaStore } from './stores/checkpoint-criteria-store';
 import { ProductComponent } from './components/product/product.component';
 import { CompanyComponent } from './components/company/company.component';
 import { CompetitorsToTargetComponent } from './components/competitors-to-target/competitors-to-target.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { ParentAsinComponent } from './components/parent-asin/parent-asin.component';
+import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { CompetitorsToTargetComponent } from './components/competitors-to-target
     OurCompanyComponent,
     ProductComponent,
     CompanyComponent,
-    CompetitorsToTargetComponent
+    CompetitorsToTargetComponent,
+    ContactInfoComponent,
+    ParentAsinComponent,
+    ShipmentInfoComponent
   ],
   imports: [
     BrowserModule,

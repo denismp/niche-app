@@ -8,6 +8,9 @@ import { OurCompanyComponent } from './components/our-company/our-company.compon
 import { ProductComponent } from './components/product/product.component';
 import { CompanyComponent } from './components/company/company.component';
 import { CompetitorsToTargetComponent } from './components/competitors-to-target/competitors-to-target.component';
+import { ParentAsinComponent } from './components/parent-asin/parent-asin.component';
+import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 
 const routes: Routes = [
   { path: '', component: HomePanelComponent },
@@ -19,7 +22,9 @@ const routes: Routes = [
   { path: 'product.component', component: ProductComponent },
   { path: 'company.component', component: CompanyComponent },
   { path: 'product.component', component: ProductComponent },
-  { path: 'competitors.to.target.component', component: CompetitorsToTargetComponent },
+  { path: 'parent.asin.component', component: ParentAsinComponent },
+  { path: 'shipment.info.component', component: ShipmentInfoComponent },
+  { path: 'contact.info.component', component: ContactInfoComponent },
 ];
 
 @NgModule({
