@@ -11,6 +11,7 @@ import { CompetitorsToTargetComponent } from './components/competitors-to-target
 import { ParentAsinComponent } from './components/parent-asin/parent-asin.component';
 import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-yes-no.component';
 
 const routes: Routes = [
   { path: '', component: HomePanelComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'parent.asin.component', component: ParentAsinComponent },
   { path: 'shipment.info.component', component: ShipmentInfoComponent },
   { path: 'contact.info.component', component: ContactInfoComponent },
+  { path: 'criteria.yes.no.component', component: CriteriaYesNoComponent },
 ];
 
 @NgModule({
