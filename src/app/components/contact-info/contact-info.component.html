@@ -18,6 +18,15 @@
                 {{row.contactDate | date}}
               </ng-template>
             </p-column>
+            <p-column field="name" header="Name" [sortable]="true"></p-column>
+            <p-column field="phone1" header="Phone1" [sortable]="true"></p-column>
+            <p-column field="phone2" header="Phone2" [sortable]="true"></p-column>
+            <p-column field="address1" header="Address1" [sortable]="true"></p-column>
+            <p-column field="address2" header="Address2" [sortable]="true"></p-column>
+            <p-column field="city" header="City" [sortable]="true"></p-column>
+            <p-column field="stateOrProvince" header="State/Province" [sortable]="true"></p-column>
+            <p-column field="postalCode" header="Postal Code" [sortable]="true"></p-column>
+            <p-column field="country" header="Country" [sortable]="true"></p-column>
             <p-column field="notes" header="Notes" [sortable]="true"></p-column>
 
              <!-- <p-column field="contactInfos" header="Product" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">

@@ -16,6 +16,15 @@ export class ContactInfoComponent implements OnInit {
   originalId: number;
   selectedContactInfo: ContactInfo = {
     id: null,
+    name: '',
+    phone1: '',
+    phone2: '',
+    address1: '',
+    address2: '',
+    city: '',
+    stateOrProvince: '',
+    country: '',
+    postalCode: '',
     email: '',
     contactDate: null,
     notes: '',
