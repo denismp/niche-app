@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   originalId: number;
   selectedProduct: Product = {
     id: null,
-    asin: null,
+    asin: '',
     productPageLink: '',
     twentyOnePointScore: null,
     primeLowPrice: null,

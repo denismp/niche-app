@@ -15,11 +15,12 @@ export class ShipmentInfoComponent implements OnInit {
   originalId: number;
   selectedShipmentInfo: ShipmentInfo = {
     id: null,
+    shipmentId: '',
     fnsku: '',
     sku: '',
     shipmentDate: null,
     skuAssignedDate: null,
-    products: null,
+    product: null,
     createdBy: '',
     createdDate: null,
     updatedBy: '',
@@ -53,16 +54,16 @@ export class ShipmentInfoComponent implements OnInit {
     this.shipmentInfoStore.getAll$().subscribe(shipmentInfos => { this.shipmentInfos = shipmentInfos; })
   }
 
-  routeToProducts(shipmentInfo: ShipmentInfo): void {
+  routeToProduct(shipmentInfo: ShipmentInfo): void {
     this.selectedShipmentInfo = shipmentInfo;
-    console.log('routeToProducts(): called...');
-    // console.log("ID=" + shipmentInfo.product.id);
-    // console.log("ASIN=" + shipmentInfo.product.asin);
-    var products: Product[] = shipmentInfo.products;
-    for (var i in products) {
-      console.log("ID=" + products[i].id)
-      console.log("ASIN=" + products[i].asin)
-    }
+    console.log('routeToProduct(): called...');
+    console.log("ID=" + shipmentInfo.product.id);
+    console.log("ASIN=" + shipmentInfo.product.asin);
+    // var products: Product[] = shipmentInfo.products;
+    // for (var i in products) {
+    //   console.log("ID=" + products[i].id)
+    //   console.log("ASIN=" + products[i].asin)
+    // }
     // this.store.dispatch({ type: 'SELECT_AUTHOR', payload: this.selectedAuthor });
     // this.router.navigate(['/home/authors/detail']);
   }

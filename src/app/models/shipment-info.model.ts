@@ -2,11 +2,12 @@ import { Product } from './product.model';
 
 export interface ShipmentInfo {
     id: number;
+    shipmentId: string,
     fnsku: string;
     sku: string;
     shipmentDate: Date;
     skuAssignedDate: Date;
-    products: Product[];
+    product: Product;
     createdBy: string;
     createdDate: Date;
     updatedBy: string;
