@@ -50,11 +50,11 @@ export class ContactInfoComponent implements OnInit {
     this.contactInfoStore.getAll$().subscribe(contactInfos => { this.contactInfos = contactInfos; })
   }
 
-  routeToProduct(contactInfo: ContactInfo): void {
+  routeToProducts(contactInfo: ContactInfo): void {
     this.selectedContactInfo = contactInfo;
     console.log('routeToProduct(): called...');
-    console.log("ID=" + contactInfo.product.id);
-    console.log("ASIN=" + contactInfo.product.asin);
+    console.log("Contact Info ID=" + contactInfo.id);
+    console.log("Contact Info EMAIL=" + contactInfo.email);
     // var products: Product[] = contactInfo.product;
     // for (var i in products) {
     //   console.log("ID=" + products[i].id)

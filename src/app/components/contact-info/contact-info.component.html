@@ -9,7 +9,7 @@
             <p-header>
                 <b>Contact Information</b>
             </p-header>
-            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
             <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
             <!-- <p-column field="company.id" header="Company ID" [sortable]="true" [style]="{'width': '10%'}"></p-column> -->
             <p-column field="email" header="Email" [sortable]="true"></p-column>
@@ -27,15 +27,25 @@
             <p-column field="stateOrProvince" header="State/Province" [sortable]="true"></p-column>
             <p-column field="postalCode" header="Postal Code" [sortable]="true"></p-column>
             <p-column field="country" header="Country" [sortable]="true"></p-column>
-            <p-column field="notes" header="Notes" [sortable]="true"></p-column>
+            <!-- <p-column field="notes" header="Notes" [sortable]="true"></p-column> -->
+            <ng-template let-contactinfo pTemplate="rowexpansion">
+                <div class="p-grid p-dir-col">
+                    <div class="p-col p-col-align-start"><b>Notes: </b>{{ contactinfo.notes }}</div>
+      
+                    <div class="p-col p-col-align-start"><b>Record created date: </b>{{ contactinfo.createdDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record created by: </b>{{ contactinfo.createdBy }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ contactinfo.updatedDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ contactinfo.updatedBy }}</div>                
+                </div>
+            </ng-template>
 
-             <!-- <p-column field="contactInfos" header="Product" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+             <p-column field="contactInfos" header="Products" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
                 <ng-template let-row="rowData" pTemplate type="body">
-                    <span class="fa fa-search fa-15" (click)="routeToProduct(row)">
+                    <span class="fa fa-search fa-15" (click)="routeToProducts(row)">
                         <span class="sr-only">Product</span>
                     </span>
                 </ng-template>
-            </p-column> -->
+            </p-column>
 
         </p-dataTable>
         <!-- <div class="row">
