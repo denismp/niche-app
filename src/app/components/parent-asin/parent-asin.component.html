@@ -1,3 +1,50 @@
 <p>
   parent-asin works!
 </p>
+<div class="row">
+    <div class="col-md-12">
+
+        <p-dataTable [value]="parentAsins" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedParentAsin">
+            <p-header>
+                <b>Parent ASINS</b>
+            </p-header>
+            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
+            <p-column field="asin" header="Parrent ASIN" [sortable]="true" [style]="{'width': '10%'}"></p-column>
+            <p-column field="createdDate" header="Date Record Created" [sortable]="true">
+                <ng-template let-row="rowData" pTemplate="body">
+                  {{row.createdDate | date}}
+                </ng-template>
+            </p-column>
+            <p-column field="updatedDate" header="Date Record Last Updated" [sortable]="true">
+                <ng-template let-row="rowData" pTemplate="body">
+                  {{row.updatedDate | date}}
+                </ng-template>
+            </p-column>
+
+             <p-column field="parentAsins" header="Product" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToProducts(row)">
+                        <span class="sr-only">Child Products</span>
+                    </span>
+                </ng-template>
+            </p-column>
+
+        </p-dataTable>
+        <!-- <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addAuthor()">Add Author</button>
+        </div> -->
+    </div>
+</div>
+
+<!-- selectedParentAsin: ParentAsin = {
+  id: null,
+  asin: '',
+  childAsins: null,
+  createdBy: '',
+  createdDate: null,
+  updatedBy: '',
+  updatedDate: null
+}; -->
