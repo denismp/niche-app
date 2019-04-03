@@ -1,3 +1,82 @@
-<p>
+<!-- <p>
   criteria-yes-no works!
-</p>
+</p> -->
+<div class="row">
+    <div class="col-md-12">
+
+        <p-dataTable [value]="criteriaYesNos" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedCriteriaYesNo">
+            <p-header>
+                <b>Criteria Yes and No's</b>
+            </p-header>
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
+            <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
+            <p-column field="yes" header="Yes" [sortable]="true"></p-column>
+            <!-- <p-column field="createdDate" header="Date Record Created" [sortable]="true">
+                <ng-template let-row="rowData" pTemplate="body">
+                  {{row.createdDate | date}}
+                </ng-template>
+            </p-column>
+            <p-column field="updatedDate" header="Date Record Last Updated" [sortable]="true">
+                <ng-template let-row="rowData" pTemplate="body">
+                  {{row.updatedDate | date}}
+                </ng-template>
+            </p-column> -->
+
+             <p-column field="criteriaYesNos" header="Criteria" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToCheckpointCriterias(row)">
+                        <span class="sr-only">Child Products</span>
+                    </span>
+                </ng-template>
+            </p-column>
+
+            <ng-template let-product pTemplate="rowexpansion">
+                <div class="p-grid p-dir-col">
+                    <div class="p-col p-col-align-start"><b>Product Page Link: </b>{{ product.productPageLink }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Number Of Competitive Sellers: </b>{{ product.numberOfCompetitiveSellers }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Units Per Month: </b>{{ product.unitsPerMonth }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Estimated Product Cost: </b>{{ product.estimatedProductCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Actual Product Cost: </b>{{ product.actualProductCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Estimated Amazon Fees: </b>{{ product.estimatedAmazonFees }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Actual Amazon Fees: </b>{{ product.actualAmazonFees }}</div>
+                    <div class="p-col p-col-align-start"><b>Product EstimatedShippCost: </b>{{ product.estimatedShippingCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Actual Shipping Cost: </b>{{ product.actualShippingCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Actual Processing Cost: </b>{{ product.actualProcessingCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Estimated Processing Cost: </b>{{ product.estimatedProcessingCost }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Estimated Profit Margin: </b>{{ product.estimatedProfitMargin }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Estimated ROI: </b>{{ product.estimatedROI }}</div>
+                    <div class="p-col p-col-align-start"><b>Product Actual ROI: </b>{{ product.actualROI }}</div>
+      
+                    <div class="p-col p-col-align-start"><b>Record created date: </b>{{ product.createdDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record created by: </b>{{ product.createdBy }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ product.updatedDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ product.updatedBy }}</div> 
+                    <div class="p-col p-col-align-start"><b>Product Notes: </b>{{ product.notes }}</div>                 
+                </div>
+                <!-- <div>
+                    <button pButton type="button" icon="pi pi-search" label="Contact Info" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+                    <button pButton type="button" icon="pi pi-search" label="Criteria" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+                    <button pButton type="button" icon="pi pi-search" label="Competitors To Target" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+                    <button pButton type="button" icon="pi pi-search" label="Shipment Info" class="ui-button-raised ui-button-info" style="margin-right: .25em"></button> 
+                    <button pButton type="button" icon="pi pi-search" label="Parent Asin" class="ui-button-raised ui-button-info"></button> 
+                </div> -->
+            </ng-template>
+
+        </p-dataTable>
+        <!-- <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addAuthor()">Add Author</button>
+        </div> -->
+    </div>
+</div>
+<!-- selectedCriteriaYesNo: CriteriaYesNo = {
+  id: null,
+  yes: null,
+  product: null,
+  checkPointCriterias: null,
+  createdBy: '',
+  createdDate: null,
+  updatedBy: '',
+  updatedDate: null
+}; -->

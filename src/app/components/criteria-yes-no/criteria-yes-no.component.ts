@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CriteriaYesNo } from 'src/app/models/criteria-yes-no.model';
 import { CriteriaYesNoStore } from 'src/app/stores/criteria-yes-no-store';
+import { CheckPointCriteria } from 'src/app/models/check-point-criteria.model';
 
 @Component({
   selector: 'app-criteria-yes-no',
@@ -35,6 +36,21 @@ export class CriteriaYesNoComponent implements OnInit {
 
   ngOnInit() {
     this.criteriaYesNoStore.getAll$().subscribe(criteriaYesNos => { this.criteriaYesNos = criteriaYesNos; })
+  }
+
+  routeToCheckpointCriterias(criteriaYesNo: CriteriaYesNo): void {
+    this.selectedCriteriaYesNo = criteriaYesNo;
+    console.log('routeToProducts(): called...');
+    // console.log("ID=" + parentAsin.product.id);
+    // console.log("ASIN=" + parentAsin.product.asin);
+    var checkPointCriterias: CheckPointCriteria[] = criteriaYesNo.checkPointCriterias;
+    for (var i in checkPointCriterias) {
+      console.log("ID=" + checkPointCriterias[i].id);
+      console.log("NAME=" + checkPointCriterias[i].criteriaName);
+      console.log("POINTS=" + checkPointCriterias[i].points);
+    }
+    // this.store.dispatch({ type: 'SELECT_AUTHOR', payload: this.selectedAuthor });
+    // this.router.navigate(['/home/authors/detail']);
   }
 
 }
