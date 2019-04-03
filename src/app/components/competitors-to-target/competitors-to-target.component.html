@@ -15,8 +15,12 @@
             <p-column field="sellerId" header="Seller ID" [sortable]="true"></p-column>
             <p-column field="sellerName" header="Seller Name" [sortable]="true"></p-column>
             <p-column field="url" header="Web Site" [sortable]="true"></p-column>
-            <p-column field="dateInventoryLastScouted" header="Last Scouted" [sortable]="true"></p-column>
-
+            <!-- <p-column field="dateInventoryLastScouted" header="Last Scouted" [sortable]="true"></p-column> -->
+            <p-column field="dateInventoryLastScouted" header="Last Scouted" [sortable]="true">
+                    <ng-template let-row="rowData" pTemplate="body">
+                      {{row.dateInventoryLastScouted | date}}
+                    </ng-template>
+                </p-column>
             <ng-template let-competitortotarget pTemplate="rowexpansion">
                     <div class="p-grid p-dir-col">
                         <div class="p-col p-col-align-start"><b>Notes: </b>{{ competitortotarget.notes }}</div>

@@ -9,14 +9,14 @@
             <p-header>
                 <b>Companies</b>
             </p-header>
-            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
             <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
             <!-- <p-column field="company.id" header="Company ID" [sortable]="true" [style]="{'width': '10%'}"></p-column> -->
             <p-column field="email" header="Email" [sortable]="true"></p-column>
             <p-column field="companyName" header="Company Name" [sortable]="true"></p-column>
             <p-column field="webSite" header="Web Site" [sortable]="true"></p-column>
             <p-column field="phone" header="Phone" [sortable]="true"></p-column>
-            <p-column field="notes" header="Notes" [sortable]="true"></p-column>
+            <!-- <p-column field="notes" header="Notes" [sortable]="true"></p-column> -->
 
              <p-column field="products" header="Products" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
                 <ng-template let-row="rowData" pTemplate type="body">
@@ -25,6 +25,16 @@
                     </span>
                 </ng-template>
             </p-column>
+            <ng-template let-company pTemplate="rowexpansion">
+                    <div class="p-grid p-dir-col">
+                        <div class="p-col p-col-align-start"><b>Notes: </b>{{ company.notes }}</div>
+          
+                        <div class="p-col p-col-align-start"><b>Record created date: </b>{{ company.createdDate | date }}</div>
+                        <div class="p-col p-col-align-start"><b>Record created by: </b>{{ company.createdBy }}</div>
+                        <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ company.updatedDate | date }}</div>
+                        <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ company.updatedBy }}</div>                
+                    </div>
+            </ng-template>
 
         </p-dataTable>
         <!-- <div class="row">

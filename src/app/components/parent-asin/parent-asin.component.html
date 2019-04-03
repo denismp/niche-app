@@ -1,6 +1,6 @@
-<p>
+<!-- <p>
   parent-asin works!
-</p>
+</p> -->
 <div class="row">
     <div class="col-md-12">
 
@@ -9,7 +9,7 @@
             <p-header>
                 <b>Parent ASINS</b>
             </p-header>
-            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
             <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
             <p-column field="asin" header="Parrent ASIN" [sortable]="true" [style]="{'width': '10%'}"></p-column>
             <p-column field="createdDate" header="Date Record Created" [sortable]="true">
@@ -30,6 +30,17 @@
                     </span>
                 </ng-template>
             </p-column>
+
+            <ng-template let-parentasin pTemplate="rowexpansion">
+                <div class="p-grid p-dir-col">
+                    <!-- <div class="p-col p-col-align-start"><b>Notes: </b>{{ shipment.notes }}</div> -->
+      
+                    <div class="p-col p-col-align-start"><b>Record created date: </b>{{ parentasin.createdDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record created by: </b>{{ parentasin.createdBy }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ parentasin.updatedDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ parentasin.updatedBy }}</div>                
+                </div>
+            </ng-template>
 
         </p-dataTable>
         <!-- <div class="row">

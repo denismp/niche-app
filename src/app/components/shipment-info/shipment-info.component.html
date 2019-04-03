@@ -9,7 +9,7 @@
             <p-header>
                 <b>Shipment Information</b>
             </p-header>
-            <!-- <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column> -->
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
             <p-column field="id" header="ID" [sortable]="true" [style]="{'width': '3%'}"></p-column>
             <p-column field="shipmentId" header="Shipment ID" [sortable]="true" [style]="{'width': '10%'}"></p-column>
             <p-column field="fnsku" header="FNSKU" [sortable]="true"></p-column>
@@ -32,6 +32,17 @@
                     </span>
                 </ng-template>
             </p-column>
+
+            <ng-template let-shipment pTemplate="rowexpansion">
+                <div class="p-grid p-dir-col">
+                    <!-- <div class="p-col p-col-align-start"><b>Notes: </b>{{ shipment.notes }}</div> -->
+      
+                    <div class="p-col p-col-align-start"><b>Record created date: </b>{{ shipment.createdDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record created by: </b>{{ shipment.createdBy }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ shipment.updatedDate | date }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ shipment.updatedBy }}</div>                
+                </div>
+            </ng-template>
 
         </p-dataTable>
         <!-- <div class="row">
