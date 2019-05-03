@@ -7,7 +7,7 @@
             <p-toolbar id="toolbarId">
                 <div class="ui-toolbar-group-left">
                     <button pButton type="button" label="New" icon="pi pi-plus" id="newBtn"></button>
-                    <button pButton type="button" label="Edit" icon="pi pi-search" id="editBtn" class="ui-button-danger"></button>
+                    <button pButton type="button" label="Edit" icon="pi pi-search" id="editBtn" class="ui-button-danger" (click)="handleEdit($event)"></button>
                     <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"
                         id="uploadBtn"></button>
 
@@ -24,8 +24,8 @@
                     <button pButton type="button" icon="pi pi-times" class="ui-button-danger" id="exitBtn"></button>
                 </div>
             </p-toolbar>
+            <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
 
     </div>
     <div class="ui-g-12">

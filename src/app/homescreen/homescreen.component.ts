@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Menu } from 'primeng/menu';
-import { style } from '@angular/animations';
+// import { Menu } from 'primeng/menu';
+// import { style } from '@angular/animations';
+import { AppMenuService } from '../services/app-menu.service';
+import { AppMenu } from '../models/app-menu.model';
 
 @Component({
   selector: 'app-homescreen',
   templateUrl: './homescreen.component.html',
-  styleUrls: ['./homescreen.component.css']
+  styleUrls: ['./homescreen.component.css'],
+  providers: [AppMenuService]
 })
 export class HomescreenComponent implements OnInit {
   title = 'niche-app Home';
+  appMenu: AppMenu;
 
-  constructor() { }
+  constructor(private appMenuService: AppMenuService) { }
 
   items: MenuItem[];
 
   ngOnInit() {
+    this.appMenu = this.appMenuService.getAppMenu();
     this.items = [{
       label: 'Menu', style: "background-color: red",
       items: [
@@ -32,6 +37,10 @@ export class HomescreenComponent implements OnInit {
         { label: 'Download', icon: 'pi pi-fw pi-download' }
       ]
     }];
+  }
+
+  handleEdit() {
+    console.log("handleEdit(): Called...");
   }
 
 }
