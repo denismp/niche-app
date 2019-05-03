@@ -15,12 +15,21 @@ export class HomescreenComponent implements OnInit {
   title = 'niche-app Home';
   appMenu: AppMenu;
 
-  constructor(private appMenuService: AppMenuService) { }
+  constructor(private appMenuService: AppMenuService) { 
+    console.log("HomescreenComponent constructor(): called.");
+  }
 
   items: MenuItem[];
 
   ngOnInit() {
-    this.appMenu = this.appMenuService.getAppMenu();
+    // this.appMenu = this.appMenuService.getAppMenu();
+    console.log("homescreen ngOnInit(): called...");
+    this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+    // this.appMenu.id = 0;
+    // this.appMenu.screenName = "homeScreen";
+    // this.appMenu.url = "home";
+    // this.appMenuService.setAppMenu(this.appMenu);
+    // this.appMenuService.currentAppMenu$.subscribe( appMenu => this.appMenu = appMenu);
     this.items = [{
       label: 'Menu', style: "background-color: red",
       items: [
@@ -41,6 +50,10 @@ export class HomescreenComponent implements OnInit {
 
   handleEdit() {
     console.log("handleEdit(): Called...");
+    // this.appMenu = this.appMenuService.getAppMenu();
+    console.log("id=" + this.appMenu.id);
+    console.log("screenName=" + this.appMenu.screenName);
+    console.log("url=" + this.appMenu.url);
   }
 
 }

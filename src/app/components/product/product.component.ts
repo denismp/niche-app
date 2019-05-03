@@ -65,17 +65,22 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appMenu = this.appMenuService.getAppMenu();
+    // this.appMenu = this.appMenuService.getAppMenu();
+    this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+
     console.log("id=" + this.appMenu.id);
     console.log("screenName=" + this.appMenu.screenName);
     console.log("url" + this.appMenu.url);
+
     this.appMenu.id = 3;
     this.appMenu.screenName = "productScreen";
-    this.appMenu.url = "/product.component";
+    this.appMenu.url = "product.component";
     this.appMenuService.setAppMenu(this.appMenu);
+
     console.log("id=" + this.appMenu.id);
     console.log("screenName=" + this.appMenu.screenName);
     console.log("url" + this.appMenu.url);
+    
     this.productStore.getAll$().subscribe(products => { this.products = products; })
   }
 
