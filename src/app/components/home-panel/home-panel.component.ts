@@ -16,7 +16,7 @@ export class HomePanelComponent implements OnInit {
     this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
     this.appMenu.id = 0;
     this.appMenu.screenName = "homeScreen";
-    this.appMenu.url = "home";
+    this.appMenu.url = "/home";
     this.appMenuService.setAppMenu(this.appMenu);
   }
 

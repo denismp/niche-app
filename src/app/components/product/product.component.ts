@@ -74,7 +74,7 @@ export class ProductComponent implements OnInit {
 
     this.appMenu.id = 3;
     this.appMenu.screenName = "productScreen";
-    this.appMenu.url = "product.component";
+    this.appMenu.url = "/product.component";
     this.appMenuService.setAppMenu(this.appMenu);
 
     console.log("id=" + this.appMenu.id);
