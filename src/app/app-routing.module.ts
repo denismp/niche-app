@@ -12,6 +12,7 @@ import { ParentAsinComponent } from './components/parent-asin/parent-asin.compon
 import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-yes-no.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 const routes: Routes = [
   { path: '', component: HomePanelComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'contact.info.component', component: ContactInfoComponent },
   { path: 'competitors.to.target.component', component: CompetitorsToTargetComponent },
   { path: 'criteria.yes.no.component', component: CriteriaYesNoComponent },
+  { path: 'edit.product.component', component: EditProductComponent },
 ];
 
 @NgModule({

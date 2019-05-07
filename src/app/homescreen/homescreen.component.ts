@@ -48,6 +48,7 @@ export class HomescreenComponent implements OnInit {
         { label: 'Competitors To Target', routerLink: "/competitors.to.target.component", routerLinkActiveOptions: "active" },
         { label: 'Checkpoint Criteria', routerLink: "/checkpoint.criteria.component", routerLinkActiveOptions: "active" },
         { label: 'Criteria Yes Nos', routerLink: "/criteria.yes.no.component", routerLinkActiveOptions: "active" },
+        { label: 'Edit Product', routerLink: "/edit.product.component", routerLinkActiveOptions: "active" },
         { label: 'Download', icon: 'pi pi-fw pi-download' }
       ]
     }];
@@ -61,7 +62,9 @@ export class HomescreenComponent implements OnInit {
     console.log("url=" + this.appMenu.url);
     // this.location.back();
     // this.router.navigate(["/product.component"]);
-    this.router.navigate([this.appMenu.url]); // temporary just to test functionality.
+    // this.router.navigate([this.appMenu.url]); // temporary just to test functionality.
+    // TODO add logic to determine how to route based on the value of the screenName above.
+    this.router.navigate(["/edit.product.component"]);
   }
 
 }

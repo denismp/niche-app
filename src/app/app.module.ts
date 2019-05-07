@@ -25,6 +25,7 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
 import { ParentAsinComponent } from './components/parent-asin/parent-asin.component';
 import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
 import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-yes-no.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-ye
     ContactInfoComponent,
     ParentAsinComponent,
     ShipmentInfoComponent,
-    CriteriaYesNoComponent
+    CriteriaYesNoComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
