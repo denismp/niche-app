@@ -5,6 +5,7 @@ import { MenuItem } from 'primeng/api';
 import { AppMenuService } from '../services/app-menu.service';
 import { AppMenu } from '../models/app-menu.model';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-homescreen',
@@ -18,7 +19,8 @@ export class HomescreenComponent implements OnInit {
 
   constructor(
     private appMenuService: AppMenuService,        
-    private router: Router) { 
+    private router: Router,
+    private location: Location) { 
     console.log("HomescreenComponent constructor(): called.");
   }
 
@@ -57,6 +59,9 @@ export class HomescreenComponent implements OnInit {
     console.log("id=" + this.appMenu.id);
     console.log("screenName=" + this.appMenu.screenName);
     console.log("url=" + this.appMenu.url);
+    // this.location.back();
+    // this.router.navigate(["/product.component"]);
+    this.router.navigate([this.appMenu.url]); // temporary just to test functionality.
   }
 
 }
