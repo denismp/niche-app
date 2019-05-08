@@ -48,7 +48,7 @@ export class HomescreenComponent implements OnInit {
         { label: 'Competitors To Target', routerLink: "/competitors.to.target.component", routerLinkActiveOptions: "active" },
         { label: 'Checkpoint Criteria', routerLink: "/checkpoint.criteria.component", routerLinkActiveOptions: "active" },
         { label: 'Criteria Yes Nos', routerLink: "/criteria.yes.no.component", routerLinkActiveOptions: "active" },
-        { label: 'Edit Product', routerLink: "/edit.product.component", routerLinkActiveOptions: "active" },
+        // { label: 'Edit Product', routerLink: "/edit.product.component", routerLinkActiveOptions: "active" },
         { label: 'Download', icon: 'pi pi-fw pi-download' }
       ]
     }];
