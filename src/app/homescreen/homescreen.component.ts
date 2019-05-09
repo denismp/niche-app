@@ -18,9 +18,9 @@ export class HomescreenComponent implements OnInit {
   appMenu: AppMenu;
 
   constructor(
-    private appMenuService: AppMenuService,        
+    private appMenuService: AppMenuService,
     private router: Router,
-    private location: Location) { 
+    private location: Location) {
     console.log("HomescreenComponent constructor(): called.");
   }
 
@@ -64,7 +64,16 @@ export class HomescreenComponent implements OnInit {
     // this.router.navigate(["/product.component"]);
     // this.router.navigate([this.appMenu.url]); // temporary just to test functionality.
     // TODO add logic to determine how to route based on the value of the screenName above.
-    this.router.navigate(["/edit.product.component"]);
+    // this.router.navigate(["/edit.product.component"]);
+    if (this.appMenu.url === '/ourcompany.component') {
+      this.router.navigate(["/edit.ourcompany.component"]);
+    }
+    if (this.appMenu.url === '/product.component') {
+      this.router.navigate(["/edit.product.component"]);
+    }
+    if (this.appMenu.url === '/company.component') {
+      this.router.navigate(["/edit.company.component"]);
+    }
   }
 
 }

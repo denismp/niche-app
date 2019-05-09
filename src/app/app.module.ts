@@ -26,6 +26,14 @@ import { ParentAsinComponent } from './components/parent-asin/parent-asin.compon
 import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.component';
 import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-yes-no.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditOurCompanyComponent } from './components/edit-our-company/edit-our-company.component';
+import { EditCompanyComponent } from './components/edit-company/edit-company.component';
+import { EditCheckpointCriteriaComponent } from './components/edit-checkpoint-criteria/edit-checkpoint-criteria.component';
+import { EditCompetitorsToTargetComponent } from './components/edit-competitors-to-target/edit-competitors-to-target.component';
+import { EditContactInformationComponent } from './components/edit-contact-information/edit-contact-information.component';
+import { EditCriteriaYesNoComponent } from './components/edit-criteria-yes-no/edit-criteria-yes-no.component';
+import { EditParentAsinsComponent } from './components/edit-parent-asins/edit-parent-asins.component';
+import { EditShipmentInformationComponent } from './components/edit-shipment-information/edit-shipment-information.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +49,15 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     ParentAsinComponent,
     ShipmentInfoComponent,
     CriteriaYesNoComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditOurCompanyComponent,
+    EditCompanyComponent,
+    EditCheckpointCriteriaComponent,
+    EditCompetitorsToTargetComponent,
+    EditContactInformationComponent,
+    EditCriteriaYesNoComponent,
+    EditParentAsinsComponent,
+    EditShipmentInformationComponent
   ],
   imports: [
     BrowserModule,

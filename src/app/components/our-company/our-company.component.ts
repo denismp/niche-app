@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { OurCompany } from 'src/app/models/our-company.model';
 import { OurCompanyStore } from 'src/app/stores/our-company-store';
 import { Product } from 'src/app/models/product.model';
+import { AppMenuService } from 'src/app/services/app-menu.service';
+import { AppMenu } from 'src/app/models/app-menu.model';
 
 @Component({
   selector: 'app-our-company',
@@ -9,6 +11,7 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./our-company.component.css']
 })
 export class OurCompanyComponent implements OnInit {
+  appMenu: AppMenu;
 
   ourCompanys: OurCompany[];
 
@@ -29,11 +32,27 @@ export class OurCompanyComponent implements OnInit {
     this.selectedOurCompany = Object.assign({}, value);
   }
 
-  constructor(private ourCompanyStore: OurCompanyStore) {
+  constructor(
+    private ourCompanyStore: OurCompanyStore,    
+    private appMenuService: AppMenuService) {
     this.ourCompanyStore.init();
   }
 
   ngOnInit() {
+    this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+
+    console.log("id=" + this.appMenu.id);
+    console.log("screenName=" + this.appMenu.screenName);
+    console.log("url" + this.appMenu.url);
+
+    this.appMenu.id = 3;
+    this.appMenu.screenName = "ourCompanyScreen";
+    this.appMenu.url = "/ourcompany.component";
+    this.appMenuService.setAppMenu(this.appMenu);
+
+    console.log("id=" + this.appMenu.id);
+    console.log("screenName=" + this.appMenu.screenName);
+    console.log("url=" + this.appMenu.url);
     this.ourCompanyStore.getAll$().subscribe(ourCompanys => { this.ourCompanys = ourCompanys; })
   }
 
@@ -47,5 +66,8 @@ export class OurCompanyComponent implements OnInit {
     }
     // this.store.dispatch({ type: 'SELECT_AUTHOR', payload: this.selectedAuthor });
     // this.router.navigate(['/home/authors/detail']);
+    console.log("id=" + this.appMenu.id);
+    console.log("screenName=" + this.appMenu.screenName);
+    console.log("url=" + this.appMenu.url);
   }
 }

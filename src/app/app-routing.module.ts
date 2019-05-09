@@ -13,6 +13,8 @@ import { ShipmentInfoComponent } from './components/shipment-info/shipment-info.
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { CriteriaYesNoComponent } from './components/criteria-yes-no/criteria-yes-no.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditOurCompanyComponent } from './components/edit-our-company/edit-our-company.component';
+import { EditCompanyComponent } from './components/edit-company/edit-company.component';
 
 const routes: Routes = [
   { path: '', component: HomePanelComponent },
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'competitors.to.target.component', component: CompetitorsToTargetComponent },
   { path: 'criteria.yes.no.component', component: CriteriaYesNoComponent },
   { path: 'edit.product.component', component: EditProductComponent },
+  { path: 'edit.ourcompany.component', component: EditOurCompanyComponent },
+  { path: 'edit.company.component', component: EditCompanyComponent },
 ];
 
 @NgModule({
