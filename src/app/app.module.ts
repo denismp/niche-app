@@ -34,6 +34,7 @@ import { EditContactInformationComponent } from './components/edit-contact-infor
 import { EditCriteriaYesNoComponent } from './components/edit-criteria-yes-no/edit-criteria-yes-no.component';
 import { EditParentAsinsComponent } from './components/edit-parent-asins/edit-parent-asins.component';
 import { EditShipmentInformationComponent } from './components/edit-shipment-information/edit-shipment-information.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,9 @@ import { EditShipmentInformationComponent } from './components/edit-shipment-inf
     SharedModule,
     ButtonModule,
     TabViewModule,
-    PickListModule
+    PickListModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [CheckpointCriteriaService, CheckpointCriteriaStore],
   bootstrap: [AppComponent]

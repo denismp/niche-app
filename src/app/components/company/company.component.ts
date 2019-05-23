@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Company } from 'src/app/models/company.model';
 import { CompanyStore } from 'src/app/stores/company-store';
 import { Product } from 'src/app/models/product.model';
 import { AppMenu } from 'src/app/models/app-menu.model';
 import { AppMenuService } from 'src/app/services/app-menu.service';
+import { RecordIdService } from 'src/app/services/record-id.service';
 
 @Component({
   selector: 'app-company',
@@ -13,6 +14,9 @@ import { AppMenuService } from 'src/app/services/app-menu.service';
 export class CompanyComponent implements OnInit {
   appMenu: AppMenu;
   companys: Company[];
+  // @Output() recordId = new EventEmitter<number>();
+  recordId: number;
+  currentId: number;
 
   originalId: number;
   selectedCompany: Company = {
@@ -35,15 +39,18 @@ export class CompanyComponent implements OnInit {
     }
     this.selectedCompany = Object.assign({}, value);
   }
+  // @Input() pSelectableRow: Company;
 
   constructor(
     private companyStore: CompanyStore,
-    private appMenuService: AppMenuService) {
+    private appMenuService: AppMenuService,
+    private recordIdService: RecordIdService) {
     this.companyStore.init();
   }
 
   ngOnInit() {
     this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+    this.recordIdService.currentRecordId.subscribe(currentId => this.currentId = currentId);
 
     console.log("id=" + this.appMenu.id);
     console.log("screenName=" + this.appMenu.screenName);
@@ -62,7 +69,9 @@ export class CompanyComponent implements OnInit {
 
   routeToProducts(company: Company): void {
     this.selectedCompany = company;
+
     console.log('routeToProducts(): called...');
+    console.log("selectedCompany.id=" + this.selectedCompany.id);
     var products: Product[] = company.products;
     for (var i in products) {
       console.log("ID=" + products[i].id)
@@ -72,4 +81,14 @@ export class CompanyComponent implements OnInit {
     // this.router.navigate(['/home/authors/detail']);
   }
 
+  onRowSelect(event: any) {
+    // this.messageService.add({severity:'info', summary:'Car Selected', detail:'Vin: ' + event.data.vin});
+    console.log("onRowSelect(): called...");
+    console.log("onRowSelect(): id=" + event.data.id);
+    console.log("onRowSelect(): company name=" + event.data.companyName);
+    // this.recordId.emit(event.data.id);
+    this.recordId = event.data.id;
+    this.recordIdService.changeRecordId(this.recordId);
+  }
 }
+

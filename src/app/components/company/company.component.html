@@ -5,7 +5,7 @@
     <div class="col-md-12">
 
         <p-dataTable [value]="companys" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
-            [(selection)]="selectedCompany">
+            [(selection)]="selectedCompany" (onRowSelect)="onRowSelect($event)">
             <p-header>
                 <b>Companies</b>
             </p-header>
@@ -35,6 +35,14 @@
                         <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ company.updatedBy }}</div>                
                     </div>
             </ng-template>
+
+            <!-- <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [selectedCompany]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template> -->
 
         </p-dataTable>
         <!-- <div class="row">

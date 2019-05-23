@@ -13,6 +13,8 @@ export class CompanyService {
     this.url = "http://localhost:8080/niche/company";
   }
 
+  getOne$ = (companyId: number): Observable<Company> => this.http.get<Company>(`${this.url}/${companyId}`);
+
   get$ = (): Observable<Company[]> => this.http.get<Company[]>(this.url);
  
   post$ = (company: Company): Observable<Company> => this.http.post<Company>(this.url, { company });

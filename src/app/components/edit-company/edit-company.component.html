@@ -1,3 +1,64 @@
-<p>
-  edit-company works!
-</p>
+<div class="container">
+  <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Company Id</label>
+          <input type="text" class="form-control" value="{{selectedCompany.id}}" formControlName="id" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Company Name</label>
+          <input type="text" class="form-control" value="{{selectedCompany.companyName}}"
+            formControlName="companyName" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="text" class="form-control" value="{{selectedCompany.email}}" formControlName="email" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Web Site</label>
+          <input type="text" class="form-control" value="{{selectedCompany.webSite}}" formControlName="webSite" />
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Phone</label>
+          <input type="text" class="form-control" value="{{selectedCompany.phone}}" formControlName="phone" />
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Notes</label>
+          <input type="text" class="form-control" value="{{selectedCompany.notes}}" formControlName="notes" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <app-books-author-pick-list (onTargetChanged)="setTargetAuthors($event)"
+            (onSourceChanged)="setSourceAuthors($event)"></app-books-author-pick-list>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <app-authors-list></app-authors-list> -->
+
+    <!-- <div class="row">
+      <p-button type="submit" class="btn btn-primary btn-sm pull-left"
+        style="margin-right:15px; margin-top:5px; margin-bottom:5px">Save</p-button>
+      <p-button type="button" class="btn btn-primary btn-sm pull-left"
+        style="margin-right:15px; margin-top:5px; margin-bottom:5px" (click)="onCancel()">Cancel</p-button>
+    </div> -->
+  </form>
+</div>

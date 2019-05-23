@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 // import { Menu } from 'primeng/menu';
 // import { style } from '@angular/animations';
@@ -6,6 +6,10 @@ import { AppMenuService } from '../services/app-menu.service';
 import { AppMenu } from '../models/app-menu.model';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { CompanyService } from '../services/company.service';
+import { CompanyComponent } from '../components/company/company.component';
+import { RecordIdService } from '../services/record-id.service';
+import { currentId } from 'async_hooks';
 
 @Component({
   selector: 'app-homescreen',
@@ -16,9 +20,12 @@ import { Location } from '@angular/common';
 export class HomescreenComponent implements OnInit {
   title = 'niche-app Home';
   appMenu: AppMenu;
+  currentId: number;
 
   constructor(
     private appMenuService: AppMenuService,
+    private companyService: CompanyService,
+    private recordIdService: RecordIdService,
     private router: Router,
     private location: Location) {
     console.log("HomescreenComponent constructor(): called.");
@@ -30,6 +37,7 @@ export class HomescreenComponent implements OnInit {
     // this.appMenu = this.appMenuService.getAppMenu();
     console.log("homescreen ngOnInit(): called...");
     this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+    this.recordIdService.currentRecordId.subscribe(currentId => this.currentId = currentId);
     // this.appMenu.id = 0;
     // this.appMenu.screenName = "homeScreen";
     // this.appMenu.url = "home";
@@ -72,6 +80,7 @@ export class HomescreenComponent implements OnInit {
       this.router.navigate(["/edit.product.component"]);
     }
     if (this.appMenu.url === '/company.component') {
+      console.log("company id=" + this.currentId);
       this.router.navigate(["/edit.company.component"]);
     }
   }
