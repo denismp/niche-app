@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ContactInfo } from 'src/app/models/contact-info.model';
 import { ContactInfoStore } from 'src/app/stores/contact-info-store';
 import { Product } from 'src/app/models/product.model';
-import { ComponentFactoryResolver } from '@angular/core/src/render3';
+// import { ComponentFactoryResolver } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-contact-info',
