@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 import { CompanyService } from '../services/company.service';
 import { CompanyComponent } from '../components/company/company.component';
 import { RecordIdService } from '../services/record-id.service';
-import { currentId } from 'async_hooks';
+// import { currentId } from 'async_hooks';
 
 @Component({
   selector: 'app-homescreen',
