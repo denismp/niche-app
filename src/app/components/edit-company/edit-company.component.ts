@@ -5,6 +5,7 @@ import { Company } from 'src/app/models/company.model';
 import { CompanyStore } from 'src/app/stores/company-store';
 import { AppMenuService } from 'src/app/services/app-menu.service';
 import { CompanyService } from 'src/app/services/company.service';
+import { RecordIdService } from 'src/app/services/record-id.service';
 
 @Component({
   selector: 'app-edit-company',
@@ -16,6 +17,7 @@ export class EditCompanyComponent implements OnInit {
   companyForm: FormGroup;
   appMenu: AppMenu;
   companys: Company[];
+  currentId: number;
 
   originalId: number;
   selectedCompany: Company = {
@@ -42,7 +44,8 @@ export class EditCompanyComponent implements OnInit {
   constructor(
     private companyStore: CompanyStore,
     private appMenuService: AppMenuService,
-    private companyService: CompanyService) {
+    private companyService: CompanyService,
+    private recordIdService: RecordIdService) {
     this.companyStore.init();
     this.companyForm = new FormGroup({
       'id': new FormControl({ value: this.selectedCompany.id, disabled: true }, Validators.required),
@@ -56,21 +59,27 @@ export class EditCompanyComponent implements OnInit {
 
   ngOnInit() {
     this.appMenuService.currentAppMenu$.subscribe(appMenu => this.appMenu = appMenu);
+    this.recordIdService.currentRecordId.subscribe(currentId => this.currentId = currentId);
 
-    console.log("id=" + this.appMenu.id);
-    console.log("screenName=" + this.appMenu.screenName);
-    console.log("url=" + this.appMenu.url);
+    console.log("EditCompanyComponent: appMenu.id=" + this.appMenu.id);
+    console.log("EditCompanyComponent: appMenu.screenName=" + this.appMenu.screenName);
+    console.log("EditCompanyComponent: appMenu.url=" + this.appMenu.url);
 
     this.appMenu.id = 11;
     this.appMenu.screenName = "editCompanyScreen";
     this.appMenu.url = "/edit.company.component";
     this.appMenuService.setAppMenu(this.appMenu);
 
-    console.log("id=" + this.appMenu.id);
-    console.log("screenName=" + this.appMenu.screenName);
-    console.log("url=" + this.appMenu.url);
+    console.log("EditCompanyComponent: appMenu.id=" + this.appMenu.id);
+    console.log("EditCompanyComponent: appMenu.screenName=" + this.appMenu.screenName);
+    console.log("EditCompanyComponent: appManue.url=" + this.appMenu.url);
+
+    console.log("EditCompanyComponent: currentId=" + this.currentId);
 
     this.companyStore.getAll$().subscribe(companys => { this.companys = companys; })
+
+    // TODO retrieve the selectedCompany by the this.currentId from the company service.
+    this.companyService.getOne$(this.currentId).subscribe(selectedCompany => {this.selectedCompany = selectedCompany});
   }
 
 }
