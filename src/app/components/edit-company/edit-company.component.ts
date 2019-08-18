@@ -16,7 +16,7 @@ export class EditCompanyComponent implements OnInit {
 
   companyForm: FormGroup;
   appMenu: AppMenu;
-  companys: Company[];
+  // companys: Company[];
   currentId: number;
 
   originalId: number;
@@ -76,7 +76,7 @@ export class EditCompanyComponent implements OnInit {
 
     console.log("EditCompanyComponent: currentId=" + this.currentId);
 
-    this.companyStore.getAll$().subscribe(companys => { this.companys = companys; })
+    // this.companyStore.getAll$().subscribe(companys => { this.companys = companys; })
 
     // TODO retrieve the selectedCompany by the this.currentId from the company service.
     this.companyService.getOne$(this.currentId).subscribe(selectedCompany => {this.selectedCompany = selectedCompany});
