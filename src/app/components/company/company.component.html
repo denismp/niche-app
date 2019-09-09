@@ -4,8 +4,8 @@
 <div class="row">
     <div class="col-md-12">
 
-        <p-dataTable [value]="companys" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
-            [(selection)]="selectedCompany" (onRowSelect)="onRowSelect($event)">
+        <p-dataTable [value]="companys" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true"
+            selectionMode="single" [(selection)]="selectedCompany" (onRowSelect)="onRowSelect($event)">
             <p-header>
                 <b>Companies</b>
             </p-header>
@@ -18,7 +18,8 @@
             <p-column field="phone" header="Phone" [sortable]="true"></p-column>
             <!-- <p-column field="notes" header="Notes" [sortable]="true"></p-column> -->
 
-             <p-column field="products" header="Products" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+            <p-column field="products" header="Products" [sortable]="false" [filter]="false"
+                [style]="{'width': '100px'}">
                 <ng-template let-row="rowData" pTemplate type="body">
                     <span class="fa fa-search fa-15" (click)="routeToProducts(row)">
                         <span class="sr-only">View Our Products</span>
@@ -26,15 +27,24 @@
                 </ng-template>
             </p-column>
             <ng-template let-company pTemplate="rowexpansion">
-                    <div class="p-grid p-dir-col">
-                        <div class="p-col p-col-align-start"><b>Notes: </b>{{ company.notes }}</div>
-          
-                        <div class="p-col p-col-align-start"><b>Record created date: </b>{{ company.createdDate | date }}</div>
-                        <div class="p-col p-col-align-start"><b>Record created by: </b>{{ company.createdBy }}</div>
-                        <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ company.updatedDate | date }}</div>
-                        <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ company.updatedBy }}</div>                
+                <div class="p-grid p-dir-col">
+                    <div class="p-col p-col-align-start"><b>Notes: </b>{{ company.notes }}</div>
+
+                    <div class="p-col p-col-align-start"><b>Record created date: </b>{{ company.createdDate | date }}
                     </div>
+                    <div class="p-col p-col-align-start"><b>Record created by: </b>{{ company.createdBy }}</div>
+                    <div class="p-col p-col-align-start"><b>Record last updated: </b>{{ company.updatedDate | date }}
+                    </div>
+                    <div class="p-col p-col-align-start"><b>Record last updated by: </b>{{ company.updatedBy }}</div>
+                </div>
             </ng-template>
+
+            <!-- <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr (mouseenter)="onMouseEnter(rowData)" (mouseleave)="onMouseLeave(rowData)"
+                    [class.row-hover]="rowData.hover">
+                    <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+                </tr>
+            </ng-template> -->
 
             <!-- <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr [selectedCompany]="rowData">
