@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 // import { Menu } from 'primeng/menu';
 // import { style } from '@angular/animations';
@@ -11,6 +11,7 @@ import { CompanyComponent } from '../components/company/company.component';
 import { RecordIdService } from '../services/record-id.service';
 // import { currentId } from 'async_hooks';
 
+
 @Component({
   selector: 'app-homescreen',
   templateUrl: './homescreen.component.html',
@@ -18,6 +19,9 @@ import { RecordIdService } from '../services/record-id.service';
   providers: [AppMenuService]
 })
 export class HomescreenComponent implements OnInit {
+
+  // @ViewChild(CompanyComponent,{static: false}) CompanyComponent;
+
   title = 'niche-app Home';
   appMenu: AppMenu;
   currentId: number;
@@ -62,7 +66,7 @@ export class HomescreenComponent implements OnInit {
     }];
   }
 
-  handleEdit() {
+  handleEdit(event: any) {
     console.log("handleEdit(): Called...");
     // this.appMenu = this.appMenuService.getAppMenu();
     console.log("id=" + this.appMenu.id);
@@ -82,6 +86,42 @@ export class HomescreenComponent implements OnInit {
     if (this.appMenu.url === '/company.component') {
       console.log("company id=" + this.currentId);
       this.router.navigate(["/edit.company.component"]);
+    }
+  }
+
+  handleSave(event: any) {
+    console.log('handleSave(): Called...')
+    console.log("id=" + this.appMenu.id);
+    console.log("screenName=" + this.appMenu.screenName);
+    console.log("url=" + this.appMenu.url);
+
+    if (this.appMenu.url === '/ourcompany.component') {
+      // this.router.navigate(["/edit.ourcompany.component"]);
+      console.log("/ourcompany.component");
+    }
+    if (this.appMenu.url === '/product.component') {
+      // this.router.navigate(["/edit.product.component"]);
+      console.log("/product.component");
+    }
+    if (this.appMenu.url === '/company.component') {
+      console.log("/company.component");
+      console.log("company id=" + this.currentId);
+      // this.router.navigate(["/company.component"]);
+      // this.companyService.getOne$(this.currentId).subscribe(selectedCompany => {this.selectedCompany = selectedCompany});
+      // this.companyService.patch$(this.currentId, company)
+    }
+    if (this.appMenu.url === '/edit.company.component') {
+      console.log("/edit.company.component");
+      console.log("company id=" + this.currentId);
+      this.companyService.patch$(this.currentId, this.appMenu.currentObject).subscribe(selectedCompany => {this.appMenu.currentObject = selectedCompany});
+
+      // this.companyService.patch$(this.companyId, this.company).subscribe((selectedId, selectedCompany) => {
+      //           this.selectedCompany = selectedCompany; 
+      //           this.selectedId = selectedId;
+      //       });
+      this.router.navigate(["/company.component"]);
+      // this.companyService.getOne$(this.currentId).subscribe(selectedCompany => {this.selectedCompany = selectedCompany});
+      // this.companyService.patch$(this.currentId, company)
     }
   }
 

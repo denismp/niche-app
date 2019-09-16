@@ -10,7 +10,8 @@ export class AppMenuService {
   private appMenu: AppMenu = {
     id: 0,
     screenName: '',
-    url: ''
+    url: '',
+    currentObject: null,
   }
 
   private appMenuStore: AppMenuStore = new AppMenuStore<AppMenu>(this.appMenu);

@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="companyForm" (ngSubmit)="onSubmit(companyForm.value)">
     <div class="row">
       <div class="col-md-4">
         <div class="form-group">
@@ -41,6 +41,9 @@
         </div>
       </div>
 
+    </div>
+    <div class="row">
+        <button pButton type="submit" icon="pi pi-check" iconPos="right" label="Submit"></button>
     </div>
 
     <!-- <div class="row">

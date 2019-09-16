@@ -55,6 +55,10 @@ export class CompanyComponent implements OnInit {
     console.log("id=" + this.appMenu.id);
     console.log("screenName=" + this.appMenu.screenName);
     console.log("url" + this.appMenu.url);
+    if (this.appMenu.url === '/edit.company.component') {
+      console.log("/edit.company.component");
+      console.log("company id=" + this.currentId);
+     }
 
     this.appMenu.id = 3;
     this.appMenu.screenName = "companyScreen";
@@ -86,6 +90,8 @@ export class CompanyComponent implements OnInit {
     console.log("onRowSelect(): called...");
     console.log("onRowSelect(): id=" + event.data.id);
     console.log("onRowSelect(): company name=" + event.data.companyName);
+    this.appMenu.currentObject = event.data;
+    this.appMenuService.setAppMenu(this.appMenu);
     // this.recordId.emit(event.data.id);
     this.recordId = event.data.id;
     this.recordIdService.changeRecordId(this.recordId);
