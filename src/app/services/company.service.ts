@@ -20,6 +20,8 @@ export class CompanyService {
   post$ = (company: Company): Observable<Company> => this.http.post<Company>(this.url, { company });
  
   patch$ = (companyId: number, company: Company): Observable<Company> => this.http.patch<Company>(`${this.url}/${companyId}`, { company });
+
+  put$ = (companyId: number, company: Company): Observable<Company> => this.http.put<Company>(`${this.url}/${companyId}`, { company });
  
   delete$ = (companyId: number): Observable<Company> => this.http.delete<Company>(`${this.url}/${companyId}`);
 }

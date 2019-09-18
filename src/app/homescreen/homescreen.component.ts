@@ -113,7 +113,7 @@ export class HomescreenComponent implements OnInit {
     if (this.appMenu.url === '/edit.company.component') {
       console.log("/edit.company.component");
       console.log("company id=" + this.currentId);
-      this.companyService.patch$(this.currentId, this.appMenu.currentObject).subscribe(selectedCompany => {this.appMenu.currentObject = selectedCompany});
+      this.companyService.put$(this.currentId, this.appMenu.currentObject).subscribe(selectedCompany => {this.appMenu.currentObject = selectedCompany});
 
       // this.companyService.patch$(this.companyId, this.company).subscribe((selectedId, selectedCompany) => {
       //           this.selectedCompany = selectedCompany; 
